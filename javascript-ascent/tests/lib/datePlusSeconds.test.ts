@@ -1,3 +1,5 @@
+import { datePlusSeconds } from "../../src/lib";
+
 describe("datePlusSeconds", () => {
   it("should give date plus zero seconds", () => {
     const someDate = Date.UTC(0);
