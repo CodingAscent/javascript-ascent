@@ -1,3 +1,7 @@
+export function datePlusDays(date: number, day: number) {
+  return date;
+}
+
 export function datePlusHours(date: number, hours: number) {
   return date + hours * 3600000;
 }
