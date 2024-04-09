@@ -3,5 +3,5 @@ export function datePlusSeconds(date: number, seconds: number) {
 }
 
 export function datePlusMinutes(date: number, minutes: number) {
-  return date;
+  return date + minutes * 60 * 1000;
 }
