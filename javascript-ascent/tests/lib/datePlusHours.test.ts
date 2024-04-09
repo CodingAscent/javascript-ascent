@@ -10,4 +10,14 @@ describe("datePlusHours", () => {
 
     expect(actual).toEqual(expected);
   });
+
+  it("should give date plus one hour", () => {
+    const someDate = Date.UTC(0);
+    const hours = 1;
+    const expected = Date.UTC(0) + 3600000;
+
+    const actual = datePlusHours(someDate, hours);
+
+    expect(actual).toEqual(expected);
+  });
 });
