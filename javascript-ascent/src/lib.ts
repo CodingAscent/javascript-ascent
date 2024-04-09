@@ -1,5 +1,5 @@
-export function datePlusDays(date: number, day: number) {
-  return date;
+export function datePlusDays(date: number, days: number) {
+  return date + days * 86400000;
 }
 
 export function datePlusHours(date: number, hours: number) {
