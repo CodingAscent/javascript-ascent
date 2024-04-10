@@ -1,4 +1,4 @@
-import { JWTPayload, jwtVerify } from "jose";
+import { JWTPayload, SignJWT, jwtVerify } from "jose";
 
 export function datePlusDays(date: number, days: number) {
   return date + days * 86400000;
@@ -26,4 +26,12 @@ export async function decrypt(
   });
 
   return payload;
+}
+
+export async function encrypt(
+  key: Uint8Array,
+  payload: any,
+  protectedHeader: any,
+) {
+  return new SignJWT(payload);
 }
