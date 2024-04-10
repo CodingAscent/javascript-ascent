@@ -29,9 +29,15 @@ export async function decrypt(
 }
 
 export async function encrypt(
+  expirationTime: Date,
+  issuedAt: Date,
   key: Uint8Array,
   payload: any,
   protectedHeader: any,
 ) {
-  return new SignJWT(payload);
+  return new SignJWT(payload)
+    .setProtectedHeader(protectedHeader)
+    .setIssuedAt(issuedAt)
+    .setExpirationTime(expirationTime)
+    .sign(key);
 }
