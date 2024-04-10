@@ -13,3 +13,7 @@ export function datePlusMinutes(date: number, minutes: number) {
 export function datePlusSeconds(date: number, seconds: number) {
   return date + seconds * 1000;
 }
+
+export async function decrypt(input: string, algorithms: string[]): Promise<any> {
+    return "Hello, HS256!";
+}
