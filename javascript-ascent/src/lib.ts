@@ -1,3 +1,5 @@
+import { JWTPayload, jwtVerify } from "jose";
+
 export function datePlusDays(date: number, days: number) {
   return date + days * 86400000;
 }
@@ -14,6 +16,14 @@ export function datePlusSeconds(date: number, seconds: number) {
   return date + seconds * 1000;
 }
 
-export async function decrypt(input: string, algorithms: string[]): Promise<any> {
-    return "Hello, HS256!";
+export async function decrypt(
+  algorithms: string[],
+  input: string,
+  key: Uint8Array,
+): Promise<any> {
+  const { payload } = await jwtVerify(input, key, {
+    algorithms,
+  });
+
+  return payload;
 }
