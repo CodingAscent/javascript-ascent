@@ -1,4 +1,4 @@
-import { JWTPayload, SignJWT, jwtVerify } from "jose";
+import { SignJWT, jwtVerify } from "jose";
 
 export function datePlusDays(date: number, days: number) {
   return date + days * 86400000;
@@ -42,6 +42,15 @@ export async function encrypt(
     .sign(key);
 }
 
-export async function getSession() {
-  return null;
+export async function getSession(
+  algorithms: string[],
+  cookies: any,
+  key: Uint8Array,
+) {
+  const session = cookies().get("session")?.value;
+  if (!session) {
+    return null;
+  }
+
+  return await decrypt(algorithms, session, key);
 }
