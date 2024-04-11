@@ -41,3 +41,7 @@ export async function encrypt(
     .setExpirationTime(expirationTime)
     .sign(key);
 }
+
+export async function getSession() {
+  return null;
+}
