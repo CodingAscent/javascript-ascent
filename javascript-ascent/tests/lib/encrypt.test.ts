@@ -11,8 +11,6 @@ describe("encrypt", () => {
       expires: new Date(0),
     };
     const someProtectedHeader = { alg: "HS256" };
-    const expected =
-      "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImVtYWlsIjoic29tZUBlbWFpbC5jb20iLCJuYW1lIjoiU29tZSBOYW1lIn0sImV4cGlyZXMiOiIxOTcwLTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjAsImV4cCI6MTB9.TUv3V2R099do6WTPuc1HCP3UxN4ejlxEkKAT6XLapi0";
 
     const actual = await encrypt(
       someExpirationTime,
@@ -21,6 +19,8 @@ describe("encrypt", () => {
       somePayload,
       someProtectedHeader,
     );
+    const expected =
+      "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImVtYWlsIjoic29tZUBlbWFpbC5jb20iLCJuYW1lIjoiU29tZSBOYW1lIn0sImV4cGlyZXMiOiIxOTcwLTAxLTAxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjAsImV4cCI6MTB9.TUv3V2R099do6WTPuc1HCP3UxN4ejlxEkKAT6XLapi0";
 
     expect(actual).toEqual(expected);
   });

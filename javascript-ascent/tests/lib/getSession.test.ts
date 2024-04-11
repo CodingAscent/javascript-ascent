@@ -1,5 +1,4 @@
 import { getSession } from "../../src/lib";
-import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 
 describe("getSession", () => {
   it("given no session, it should return null", async () => {
@@ -14,9 +13,9 @@ describe("getSession", () => {
     };
     const someAlgorithms = ["HS256"];
     const someKey = new TextEncoder().encode("key");
-    const expected = null;
 
     const actual = await getSession(someAlgorithms, mock.cookies, someKey);
+    const expected = null;
 
     expect(actual).toEqual(expected);
   });
@@ -37,9 +36,9 @@ describe("getSession", () => {
       };
       const someAlgorithms = ["HS256"];
       const someKey = new TextEncoder().encode("key");
-      const expected = { iat: 1516239022, name: "John Doe", sub: "1234567890" };
 
       const actual = await getSession(someAlgorithms, mock.cookies, someKey);
+      const expected = { iat: 1516239022, name: "John Doe", sub: "1234567890" };
 
       expect(actual).toEqual(expected);
     });

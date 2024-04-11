@@ -6,9 +6,9 @@ describe("decrypt", () => {
     const someInput =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.emP08u28tDrfxdyKmL_IyKHhpbxb8ghu8UEOyhdRWdw";
     const someKey = new TextEncoder().encode("key");
-    const expected = { iat: 1516239022, name: "John Doe", sub: "1234567890" };
 
     const actual = await decrypt(someAlgorithms, someInput, someKey);
+    const expected = { iat: 1516239022, name: "John Doe", sub: "1234567890" };
 
     expect(actual).toEqual(expected);
   });
@@ -18,9 +18,9 @@ describe("decrypt", () => {
     const someInput =
       "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.YEWolTAKVcnso3pikulvAaVISdEvPFzWEQ3vaTJLprk_Dn4GyhUVwTosR00sLJqO6rTjhYRksydtvUep25CTXA";
     const someKey = new TextEncoder().encode("key");
-    const expected = { iat: 1516239022, name: "John Doe", sub: "1234567890" };
 
     const actual = await decrypt(someAlgorithms, someInput, someKey);
+    const expected = { iat: 1516239022, name: "John Doe", sub: "1234567890" };
 
     expect(actual).toEqual(expected);
   });
